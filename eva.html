@@ -1,29 +1,96 @@
 <!doctype html>
-<html data-mode="dark" lang="en" data-preset="gallery">
-<head>
+<html lang="en">
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#060607">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<script>var h=document.documentElement;h.dataset.html='on';try{h.dataset.html=localStorage.getItem('diegetic-html')==='off'?'off':'on';h.dataset.mode=localStorage.getItem('diegetic-lights')==='on'?'light':'dark'}catch(e){h.dataset.mode='dark'}</script>
-<title>Operations station</title>
-<meta name="description" content="A command bridge console, built from HTML tags, running one sortie from first contact to the end.">
-  <script type="module" crossorigin src="./assets/eva-pCU1ih2_.js"></script>
-  <link rel="modulepreload" crossorigin href="./assets/preload-helper-Cvq2PWiV.js">
-  <link rel="modulepreload" crossorigin href="./assets/materials-hvr5dxzG.js">
-  <link rel="modulepreload" crossorigin href="./assets/shared-Cwqa1_O1.js">
-  <link rel="modulepreload" crossorigin href="./assets/key-BZoa2ZIz.js">
-  <link rel="modulepreload" crossorigin href="./assets/displays-DohFWUvX.js">
-  <link rel="modulepreload" crossorigin href="./assets/controls-D1dFX5hE.js">
-  <link rel="modulepreload" crossorigin href="./assets/clips-1eA5DeCh.js">
-  <link rel="modulepreload" crossorigin href="./assets/demos-B8IX9csO.js">
-  <link rel="modulepreload" crossorigin href="./assets/mono-7max7WTe.js">
-  <link rel="modulepreload" crossorigin href="./assets/drums-BRaie8rC.js">
-  <link rel="modulepreload" crossorigin href="./assets/poly-Dky0p9ny.js">
-  <link rel="modulepreload" crossorigin href="./assets/sound-eva-DuC1PYjO.js">
-  <link rel="stylesheet" crossorigin href="./assets/app-DwvDogi0.css">
-</head>
-<body class="eva-page">
-<main id="stage" data-demo="eva" data-alone></main>
-</body>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Preview</title>
+<style>
+  :root { color-scheme: light dark; --page: #f4f3ef; --ink: #1c1c1a; --quiet: #6f6e68; --line: #c9c8c1; }
+  @media (prefers-color-scheme: dark) { :root { --page: #161615; --ink: #eeede8; --quiet: #93928b; --line: #3c3c38; } }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body { display: grid; place-items: center; padding: 16px; background: var(--page); color: var(--ink); font: 16px/1.4 system-ui, sans-serif; }
+  form { display: grid; gap: 10px; width: min(100%, 280px); }
+  input, button { width: 100%; height: 44px; padding: 0 12px; border: 1px solid var(--line); border-radius: 6px; background: none; color: inherit; font: inherit; }
+  button { background: var(--ink); border-color: var(--ink); color: var(--page); cursor: pointer; }
+  button:disabled { opacity: .5; cursor: wait; }
+  p { min-height: 22px; margin: 0; color: var(--quiet); font-size: 14px; }
+  [hidden] { display: none; }
+</style>
+<form hidden>
+  <input type="password" name="password" placeholder="Password" aria-label="Password" autocomplete="current-password" autofocus required>
+  <button>Open</button>
+  <p role="status"></p>
+</form>
+<noscript>This page needs JavaScript.</noscript>
+<script type="module">
+  const SALT = 'c5b1e0a47d3f92866e10b7fa42d9c3e1', ROUNDS = 600000;
+  const form = document.querySelector('form'), say = form.querySelector('p'), button = form.querySelector('button');
+  const bytes = hex => Uint8Array.from(hex.match(/../g), h => parseInt(h, 16));
+
+  const store = run => new Promise((done, fail) => {
+    const open = indexedDB.open('share', 1);
+    open.onupgradeneeded = () => open.result.createObjectStore('key');
+    open.onerror = () => fail(open.error);
+    open.onsuccess = () => {
+      const r = run(open.result.transaction('key', 'readwrite').objectStore('key'));
+      r.onsuccess = () => done(r.result);
+      r.onerror = () => fail(r.error);
+    };
+  });
+
+  async function derive(password) {
+    const base = await crypto.subtle.importKey('raw', new TextEncoder().encode(password), 'PBKDF2', false, ['deriveBits']);
+    return new Uint8Array(await crypto.subtle.deriveBits({ name: 'PBKDF2', hash: 'SHA-256', salt: bytes(SALT), iterations: ROUNDS }, base, 256));
+  }
+
+  // A wrong password can't open the list of files, so nothing has to say what the right one is.
+  async function opens(raw) {
+    const key = await crypto.subtle.importKey('raw', raw, 'AES-GCM', false, ['decrypt']);
+    const sealed = await (await fetch('e/map.bin', { cache: 'no-cache' })).arrayBuffer();
+    try {
+      await crypto.subtle.decrypt({ name: 'AES-GCM', iv: sealed.slice(0, 12) }, key, sealed.slice(12));
+      return true;
+    } catch {
+      return false;
+    }
+  }
+
+  const controlled = () => navigator.serviceWorker.controller ? Promise.resolve() : new Promise(done => navigator.serviceWorker.addEventListener('controllerchange', done, { once: true }));
+
+  async function start() {
+    if (!navigator.serviceWorker || !crypto.subtle || !globalThis.indexedDB) {
+      document.body.textContent = 'This browser can\'t open it. Open the link in Safari or Chrome.';
+      return;
+    }
+    await navigator.serviceWorker.register('sw.js');
+    const held = await store(s => s.get('raw'));
+    // Here with a key and no worker in charge is a hard reload. With one in charge, the key has stopped working.
+    if (held && !navigator.serviceWorker.controller && await opens(held)) {
+      await controlled();
+      location.reload();
+      return;
+    }
+    form.hidden = false;
+    form.elements.password.focus();
+  }
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    button.disabled = true;
+    say.textContent = '';
+    const raw = await derive(form.elements.password.value);
+    if (await opens(raw)) {
+      await store(s => s.put(raw, 'raw'));
+      await controlled();
+      location.reload();
+      return;
+    }
+    button.disabled = false;
+    say.textContent = 'Wrong password.';
+    form.elements.password.select();
+  });
+
+  start().catch(() => { document.body.textContent = 'This browser can\'t open it. Open the link in Safari or Chrome.'; });
+</script>
 </html>
