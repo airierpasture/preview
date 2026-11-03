@@ -1,6 +1,6 @@
 // Opens the sealed files in `e/`. With no key it does nothing, so every page is the password box.
 const scope = self.registration.scope;
-let key = null, map = null;
+let key = null, map = null, open = null;
 
 addEventListener('install', () => skipWaiting());
 addEventListener('activate', e => e.waitUntil(clients.claim()));
@@ -22,6 +22,9 @@ async function opened(url) {
 }
 
 async function serve(request, path) {
+  // A page left open is served as it is, so the key never brings back an older sealed copy of it.
+  if (!open || request.mode === 'navigate') open = await fetch(`${scope}open.json`, { cache: 'no-cache' }).then(r => (r.ok ? r.json() : []), () => []);
+  if (open.includes(path || 'index.html')) return fetch(request);
   const raw = key ?? await held();
   if (!raw) return fetch(request);
   try {
