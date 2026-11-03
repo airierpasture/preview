@@ -1,28 +1,583 @@
 {
-  "_help": "Edit by hand. Times are ISO with offset (-05:00 is ET). house D/R/I: seats called so far, of 435. senate D/R/I: seats called this year only, of 35; the page adds the 65 not up (32 D, 31 R, 2 I). races: call is \"D\", \"R\", \"I\" or null, only once AP or the networks have called it; close: true makes it blink too close to call. Bump updated every time you save. source stays manual.",
+  "_help": "Edit by hand. Times are ISO with offset (-05:00 is ET). house D/R/I: seats called so far, of 435. senate D/R/I: seats called this year only, of 35; the page adds the 65 not up (32 D, 31 R, 2 I). races.<key>.call: \"D\", \"R\", \"I\" or null, ONLY once AP or the networks have called it. close: true makes it blink too close to call. count: vote share so far in % (D, R, I) and in = % of expected vote counted, with asOf. polls and markets are pre-election snapshots (Silver Bulletin average via Wikipedia, Polymarket prices). Bump updated every time you save, then run pnpm results.",
   "source": "manual",
   "updated": "2026-11-03T14:45:00-05:00",
-  "house": { "D": 0, "R": 0, "I": 0, "asOf": "2026-11-03T14:45:00-05:00" },
-  "senate": { "D": 0, "R": 0, "I": 0, "asOf": "2026-11-03T14:45:00-05:00" },
+  "house": {
+    "D": 0,
+    "R": 0,
+    "I": 0,
+    "asOf": "2026-11-03T14:45:00-05:00"
+  },
+  "senate": {
+    "D": 0,
+    "R": 0,
+    "I": 0,
+    "asOf": "2026-11-03T14:45:00-05:00"
+  },
   "races": {
-    "ak-sen": { "call": null, "close": false },
-    "ga-sen": { "call": null, "close": false },
-    "ia-sen": { "call": null, "close": false },
-    "ks-sen": { "call": null, "close": false },
-    "me-sen": { "call": null, "close": false },
-    "mi-sen": { "call": null, "close": false },
-    "nc-sen": { "call": null, "close": false },
-    "nh-sen": { "call": null, "close": false },
-    "oh-sen": { "call": null, "close": false },
-    "tx-sen": { "call": null, "close": false },
-    "ga-gov": { "call": null, "close": false },
-    "ia-gov": { "call": null, "close": false },
-    "mi-gov": { "call": null, "close": false },
-    "nv-gov": { "call": null, "close": false },
-    "oh-gov": { "call": null, "close": false },
-    "wi-gov": { "call": null, "close": false }
+    "ak-sen": {
+      "call": null,
+      "close": false,
+      "candidates": {
+        "D": "Mary Peltola",
+        "R": "Dan Sullivan",
+        "I": null
+      },
+      "count": {
+        "D": null,
+        "R": null,
+        "I": null,
+        "in": null,
+        "asOf": null
+      },
+      "polls": {
+        "D": 48.3,
+        "R": 45.9,
+        "I": null,
+        "source": "Silver Bulletin",
+        "asOf": "2026-11-03T12:00:00-05:00"
+      },
+      "markets": {
+        "D": 0.71,
+        "R": 0.3,
+        "I": null,
+        "source": "Polymarket",
+        "asOf": "2026-11-03T12:00:00-05:00"
+      },
+      "rating": {
+        "text": "Toss-up",
+        "source": "Cook",
+        "asOf": "2026-11-02"
+      }
+    },
+    "ga-sen": {
+      "call": null,
+      "close": false,
+      "candidates": {
+        "D": "Jon Ossoff",
+        "R": "Mike Collins",
+        "I": null
+      },
+      "count": {
+        "D": null,
+        "R": null,
+        "I": null,
+        "in": null,
+        "asOf": null
+      },
+      "polls": {
+        "D": 52.8,
+        "R": 43.4,
+        "I": null,
+        "source": "Silver Bulletin",
+        "asOf": "2026-11-03T12:00:00-05:00"
+      },
+      "markets": {
+        "D": 0.97,
+        "R": 0.03,
+        "I": null,
+        "source": "Polymarket",
+        "asOf": "2026-11-03T11:00:00-05:00"
+      },
+      "rating": {
+        "text": "Likely D",
+        "source": "Cook",
+        "asOf": "2026-11-02"
+      }
+    },
+    "ia-sen": {
+      "call": null,
+      "close": false,
+      "candidates": {
+        "D": "Josh Turek",
+        "R": "Ashley Hinson",
+        "I": null
+      },
+      "count": {
+        "D": null,
+        "R": null,
+        "I": null,
+        "in": null,
+        "asOf": null
+      },
+      "polls": {
+        "D": 47.7,
+        "R": 46.7,
+        "I": null,
+        "source": "Silver Bulletin",
+        "asOf": "2026-11-03T12:00:00-05:00"
+      },
+      "markets": {
+        "D": 0.51,
+        "R": 0.5,
+        "I": null,
+        "source": "Polymarket",
+        "asOf": "2026-11-03T15:00:00-05:00"
+      },
+      "rating": {
+        "text": "Toss-up",
+        "source": "Cook",
+        "asOf": "2026-11-02"
+      }
+    },
+    "ks-sen": {
+      "call": null,
+      "close": false,
+      "candidates": {
+        "D": "Adam Hamilton",
+        "R": "Roger Marshall",
+        "I": null
+      },
+      "count": {
+        "D": null,
+        "R": null,
+        "I": null,
+        "in": null,
+        "asOf": null
+      },
+      "polls": {
+        "D": 49.9,
+        "R": 45.8,
+        "I": null,
+        "source": "Silver Bulletin",
+        "asOf": "2026-11-03T12:00:00-05:00"
+      },
+      "markets": {
+        "D": 0.64,
+        "R": 0.37,
+        "I": null,
+        "source": "Polymarket",
+        "asOf": "2026-11-03T15:00:00-05:00"
+      },
+      "rating": {
+        "text": "Toss-up",
+        "source": "Cook",
+        "asOf": "2026-11-02"
+      }
+    },
+    "me-sen": {
+      "call": null,
+      "close": false,
+      "candidates": {
+        "D": "Troy Jackson",
+        "R": "Susan Collins",
+        "I": null
+      },
+      "count": {
+        "D": null,
+        "R": null,
+        "I": null,
+        "in": null,
+        "asOf": null
+      },
+      "polls": {
+        "D": 50.5,
+        "R": 46.5,
+        "I": null,
+        "source": "Silver Bulletin",
+        "asOf": "2026-11-03T12:00:00-05:00"
+      },
+      "markets": {
+        "D": 0.71,
+        "R": 0.3,
+        "I": null,
+        "source": "Polymarket",
+        "asOf": "2026-11-03T14:00:00-05:00"
+      },
+      "rating": {
+        "text": "Toss-up",
+        "source": "Cook",
+        "asOf": "2026-11-02"
+      }
+    },
+    "mi-sen": {
+      "call": null,
+      "close": false,
+      "candidates": {
+        "D": "Abdul El-Sayed",
+        "R": "Mike Rogers",
+        "I": null
+      },
+      "count": {
+        "D": null,
+        "R": null,
+        "I": null,
+        "in": null,
+        "asOf": null
+      },
+      "polls": {
+        "D": 50.3,
+        "R": 45.4,
+        "I": null,
+        "source": "Silver Bulletin",
+        "asOf": "2026-11-03T12:00:00-05:00"
+      },
+      "markets": {
+        "D": 0.76,
+        "R": 0.24,
+        "I": null,
+        "source": "Polymarket",
+        "asOf": "2026-11-03T14:00:00-05:00"
+      },
+      "rating": {
+        "text": "Lean D",
+        "source": "Cook",
+        "asOf": "2026-11-02"
+      }
+    },
+    "nc-sen": {
+      "call": null,
+      "close": false,
+      "candidates": {
+        "D": "Roy Cooper",
+        "R": "Michael Whatley",
+        "I": null
+      },
+      "count": {
+        "D": null,
+        "R": null,
+        "I": null,
+        "in": null,
+        "asOf": null
+      },
+      "polls": {
+        "D": 52.6,
+        "R": 42.6,
+        "I": null,
+        "source": "Silver Bulletin",
+        "asOf": "2026-11-01T12:00:00-05:00"
+      },
+      "markets": {
+        "D": 0.98,
+        "R": 0.02,
+        "I": null,
+        "source": "Polymarket",
+        "asOf": "2026-11-03T15:00:00-05:00"
+      },
+      "rating": {
+        "text": "Likely D",
+        "source": "Cook",
+        "asOf": "2026-11-02"
+      }
+    },
+    "nh-sen": {
+      "call": null,
+      "close": false,
+      "candidates": {
+        "D": "Chris Pappas",
+        "R": "John E. Sununu",
+        "I": null
+      },
+      "count": {
+        "D": null,
+        "R": null,
+        "I": null,
+        "in": null,
+        "asOf": null
+      },
+      "polls": {
+        "D": 49.6,
+        "R": 42.3,
+        "I": null,
+        "source": "Silver Bulletin",
+        "asOf": "2026-10-22T12:00:00-05:00"
+      },
+      "markets": {
+        "D": 0.96,
+        "R": 0.05,
+        "I": null,
+        "source": "Polymarket",
+        "asOf": "2026-11-03T13:00:00-05:00"
+      },
+      "rating": {
+        "text": "Lean D",
+        "source": "Cook",
+        "asOf": "2026-11-02"
+      }
+    },
+    "oh-sen": {
+      "call": null,
+      "close": false,
+      "candidates": {
+        "D": "Sherrod Brown",
+        "R": "Jon Husted",
+        "I": null
+      },
+      "count": {
+        "D": null,
+        "R": null,
+        "I": null,
+        "in": null,
+        "asOf": null
+      },
+      "polls": {
+        "D": 48.3,
+        "R": 45.3,
+        "I": null,
+        "source": "Silver Bulletin",
+        "asOf": "2026-11-02T12:00:00-05:00"
+      },
+      "markets": {
+        "D": 0.73,
+        "R": 0.28,
+        "I": null,
+        "source": "Polymarket",
+        "asOf": "2026-11-03T10:00:00-05:00"
+      },
+      "rating": {
+        "text": "Toss-up",
+        "source": "Cook",
+        "asOf": "2026-11-02"
+      }
+    },
+    "tx-sen": {
+      "call": null,
+      "close": false,
+      "candidates": {
+        "D": "James Talarico",
+        "R": "Ken Paxton",
+        "I": null
+      },
+      "count": {
+        "D": null,
+        "R": null,
+        "I": null,
+        "in": null,
+        "asOf": null
+      },
+      "polls": {
+        "D": 49.8,
+        "R": 46.3,
+        "I": null,
+        "source": "Silver Bulletin",
+        "asOf": "2026-11-02T12:00:00-05:00"
+      },
+      "markets": {
+        "D": 0.75,
+        "R": 0.26,
+        "I": null,
+        "source": "Polymarket",
+        "asOf": "2026-11-03T11:00:00-05:00"
+      },
+      "rating": {
+        "text": "Toss-up",
+        "source": "Cook",
+        "asOf": "2026-11-02"
+      }
+    },
+    "ga-gov": {
+      "call": null,
+      "close": false,
+      "candidates": {
+        "D": "Keisha Lance Bottoms",
+        "R": "Rick Jackson",
+        "I": null
+      },
+      "count": {
+        "D": null,
+        "R": null,
+        "I": null,
+        "in": null,
+        "asOf": null
+      },
+      "polls": {
+        "D": 47.7,
+        "R": 47.7,
+        "I": null,
+        "source": "Silver Bulletin",
+        "asOf": "2026-10-28T12:00:00-05:00"
+      },
+      "markets": {
+        "D": 0.74,
+        "R": 0.27,
+        "I": null,
+        "source": "Polymarket",
+        "asOf": "2026-11-03T13:00:00-05:00"
+      },
+      "rating": {
+        "text": "Toss-up",
+        "source": "Cook",
+        "asOf": "2026-10-29"
+      }
+    },
+    "ia-gov": {
+      "call": null,
+      "close": false,
+      "candidates": {
+        "D": "Rob Sand",
+        "R": "Zach Lahn",
+        "I": null
+      },
+      "count": {
+        "D": null,
+        "R": null,
+        "I": null,
+        "in": null,
+        "asOf": null
+      },
+      "polls": {
+        "D": 51.8,
+        "R": 44.5,
+        "I": null,
+        "source": "Silver Bulletin",
+        "asOf": "2026-11-02T12:00:00-05:00"
+      },
+      "markets": {
+        "D": 0.9,
+        "R": 0.12,
+        "I": null,
+        "source": "Polymarket",
+        "asOf": "2026-11-03T13:00:00-05:00"
+      },
+      "rating": {
+        "text": "Lean D",
+        "source": "Cook",
+        "asOf": "2026-10-29"
+      }
+    },
+    "mi-gov": {
+      "call": null,
+      "close": false,
+      "candidates": {
+        "D": "Jocelyn Benson",
+        "R": "John James",
+        "I": null
+      },
+      "count": {
+        "D": null,
+        "R": null,
+        "I": null,
+        "in": null,
+        "asOf": null
+      },
+      "polls": {
+        "D": 51.8,
+        "R": 42.4,
+        "I": null,
+        "source": "Silver Bulletin",
+        "asOf": "2026-11-02T12:00:00-05:00"
+      },
+      "markets": {
+        "D": 0.94,
+        "R": 0.05,
+        "I": null,
+        "source": "Polymarket",
+        "asOf": "2026-11-03T15:00:00-05:00"
+      },
+      "rating": {
+        "text": "Lean D",
+        "source": "Cook",
+        "asOf": "2026-10-29"
+      }
+    },
+    "nv-gov": {
+      "call": null,
+      "close": false,
+      "candidates": {
+        "D": "Aaron Ford",
+        "R": "Joe Lombardo",
+        "I": null
+      },
+      "count": {
+        "D": null,
+        "R": null,
+        "I": null,
+        "in": null,
+        "asOf": null
+      },
+      "polls": {
+        "D": 44.6,
+        "R": 45.1,
+        "I": null,
+        "source": "Silver Bulletin",
+        "asOf": "2026-10-27T12:00:00-05:00"
+      },
+      "markets": {
+        "D": 0.83,
+        "R": 0.18,
+        "I": null,
+        "source": "Polymarket",
+        "asOf": "2026-11-03T12:00:00-05:00"
+      },
+      "rating": {
+        "text": "Toss-up",
+        "source": "Cook",
+        "asOf": "2026-10-29"
+      }
+    },
+    "oh-gov": {
+      "call": null,
+      "close": false,
+      "candidates": {
+        "D": "Amy Acton",
+        "R": "Vivek Ramaswamy",
+        "I": null
+      },
+      "count": {
+        "D": null,
+        "R": null,
+        "I": null,
+        "in": null,
+        "asOf": null
+      },
+      "polls": {
+        "D": 48.7,
+        "R": 44.6,
+        "I": null,
+        "source": "Silver Bulletin",
+        "asOf": "2026-11-02T12:00:00-05:00"
+      },
+      "markets": {
+        "D": 0.83,
+        "R": 0.18,
+        "I": null,
+        "source": "Polymarket",
+        "asOf": "2026-11-03T14:00:00-05:00"
+      },
+      "rating": {
+        "text": "Lean D",
+        "source": "Cook",
+        "asOf": "2026-10-29"
+      }
+    },
+    "wi-gov": {
+      "call": null,
+      "close": false,
+      "candidates": {
+        "D": "David Crowley",
+        "R": "Tom Tiffany",
+        "I": null
+      },
+      "count": {
+        "D": null,
+        "R": null,
+        "I": null,
+        "in": null,
+        "asOf": null
+      },
+      "polls": {
+        "D": 48.7,
+        "R": 43.7,
+        "I": null,
+        "source": "RCP",
+        "asOf": "2026-10-28T12:00:00-05:00"
+      },
+      "markets": {
+        "D": 0.88,
+        "R": 0.13,
+        "I": null,
+        "source": "Polymarket",
+        "asOf": "2026-11-03T14:00:00-05:00"
+      },
+      "rating": {
+        "text": "Lean D",
+        "source": "Cook",
+        "asOf": "2026-10-29"
+      }
+    }
   },
   "ticker": [
-    "POLLS HAVE NOT CLOSED. NO RESULTS YET."
+    "POLLS CLOSE FROM 18:00 ET. NO RESULTS YET.",
+    "POLLS ARE SILVER BULLETIN AVERAGES. MARKETS ARE POLYMARKET PRICES FROM THIS MORNING. NEITHER IS A RESULT."
   ]
 }
