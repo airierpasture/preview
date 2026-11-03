@@ -1,4 +1,4 @@
-import"./preload-helper-9vAq-Yc_.js";import"./controls-BcrWij7w.js";import"./print-BNSsXJvI.js";import"./light-BlsVf-IK.js";import{a as e,c as t,d as n,i as r,l as i,n as a,o,r as s,s as c,t as l}from"./firmware-election-jWgnugcD.js";var u=720,d=8,f=8,p=92,m=232,h=124,g=[112,78],_=[49,23],v=[206,155],y=[264,198],b=2,x=2,S=42,C=e=>`${e*4}px`,w=`#ff7a1a`,T=`#a8551a`,E=(e,t=``,n=w)=>`<span d-mark="label flat" ink="${n}" class="${t}">${e}</span>`,D=(e,t,n=``)=>`<div class="col ${n}">${e}${E(t)}</div>`,O=e=>`<i d-mark="print silk" class="rule ${e}" color="${w}" path="M0 0H100V1H0Z" viewbox="0 0 100 1"></i>`,k=(e,t)=>`<i d-mark="print silk" class="hazard ${e}" color="${w}" viewbox="0 0 ${t*2} 2" path="${Array.from({length:t},(e,t)=>`M${t*2} 2L${t*2+1} 0H${t*2+2}L${t*2+1} 2Z`).join(``)}"></i>`,A=(e,t)=>`<div class="head">${E(e,`jp`)}${E(t,`en`)}${O(`under`)}</div>`,j=[...e.map(([e,t,n],r)=>{let i=t===`S`?`Senate`:`Governor`;return`<div d-lamp="annunciator" class="m-${r} race" color="amber" data-race="${e} ${i}" role="button" aria-label="${e} ${i}">${n}${t===`S`?`上院`:`知事`}<br>${e} ${t===`S`?`Sen`:`Gov`}</div>`}),...l.map(([e,t,n,r])=>`<div d-lamp="annunciator" class="t-${e}" color="${r}">${t}<br>${n}</div>`)],M=(e,t,n,r)=>D(`<div d-meter="gauge" class="g-${e}" ticks="4" minor="3" zones="${r}-${n} amber" label="${t}"><meter min="0" max="${n}" value="0"></meter></div>`,t),N={id:`election`,title:`Election watch`,note:`The operations station, seconded to election night, reading every race from civicAPI. It powers up, says what its controls do, and then on Auto watches whatever is happening. Press a lamp, or Prev and Next, to pick a race; the view keys pick what the map shows.`,era:`retro`,order:91,dark:!0,height:1856,states:{"house view":[`.view-key:nth-child(2)`],"next race":[`.k-next`]},html:`<div id="election">
+import"./preload-helper-9vAq-Yc_.js";import"./controls-BcrWij7w.js";import"./print-BNSsXJvI.js";import"./light-BlsVf-IK.js";import{a as e,c as t,d as n,i as r,l as i,n as a,o,r as s,s as c,t as l}from"./firmware-election-DDZ6I5JM.js";var u=720,d=8,f=8,p=92,m=232,h=124,g=[112,78],_=[49,23],v=[206,155],y=[264,198],b=2,x=2,S=42,C=e=>`${e*4}px`,w=`#ff7a1a`,T=`#a8551a`,E=(e,t=``,n=w)=>`<span d-mark="label flat" ink="${n}" class="${t}">${e}</span>`,D=(e,t,n=``)=>`<div class="col ${n}">${e}${E(t)}</div>`,O=e=>`<i d-mark="print silk" class="rule ${e}" color="${w}" path="M0 0H100V1H0Z" viewbox="0 0 100 1"></i>`,k=(e,t)=>`<i d-mark="print silk" class="hazard ${e}" color="${w}" viewbox="0 0 ${t*2} 2" path="${Array.from({length:t},(e,t)=>`M${t*2} 2L${t*2+1} 0H${t*2+2}L${t*2+1} 2Z`).join(``)}"></i>`,A=(e,t)=>`<div class="head">${E(e,`jp`)}${E(t,`en`)}${O(`under`)}</div>`,j=[...e.map(([e,t,n],r)=>{let i=t===`S`?`Senate`:`Governor`;return`<div d-lamp="annunciator" class="m-${r} race" color="amber" data-race="${e} ${i}" role="button" aria-label="${e} ${i}">${n}${t===`S`?`上院`:`知事`}<br>${e} ${t===`S`?`Sen`:`Gov`}</div>`}),...l.map(([e,t,n,r])=>`<div d-lamp="annunciator" class="t-${e}" color="${r}">${t}<br>${n}</div>`)],M=(e,t,n,r)=>D(`<div d-meter="gauge" class="g-${e}" ticks="4" minor="3" zones="${r}-${n} amber" label="${t}"><meter min="0" max="${n}" value="0"></meter></div>`,t),N={id:`election`,title:`Election watch`,note:`The operations station, seconded to election night, reading every race from civicAPI. It powers up, says what its controls do, and then on Auto watches whatever is happening. Press a lamp, or Prev and Next, to pick a race; the view keys pick what the map shows.`,era:`retro`,order:91,dark:!0,height:1856,states:{"house view":[`.view-key:nth-child(2)`],"next race":[`.k-next`]},html:`<div id="election">
   <d-device class="alarms" material="paint-panel-black" radius="4" screws wear="0.35">
     <div class="ident">
       <span d-mark="print silk" class="nerv" color="${w}">NERV</span>
@@ -17,6 +17,7 @@ import"./preload-helper-9vAq-Yc_.js";import"./controls-BcrWij7w.js";import"./pri
           <div d-lamp="annunciator" class="t-demo" color="violet">演習<br>Demo</div>
           <div d-lamp="annunciator" class="t-live" color="green">自動<br>Live</div>
         </div>
+        <div class="col start"><button d-key="arcade" class="k-power" color="red" aria-label="Start">起動</button>${E(`Start`)}</div>
       </div>
     </div>
   </d-device>
@@ -41,10 +42,10 @@ import"./preload-helper-9vAq-Yc_.js";import"./controls-BcrWij7w.js";import"./pri
     <section class="s-watch">
       <div class="watch-head">${k(`w-band`,6)}${E(`選択`,`jp`)}${E(`Pick a race`,`en`)}${k(`w-band`,6)}</div>
       <div class="watch">
-        ${D(`<button d-key="flush" class="k-prev" color="amber" on aria-label="Previous race">◀</button>`,`Prev`)}
-        ${D(`<div d-knob="encoder" class="pick" color="cyan" segments="15"><input type="range" min="0" max="${e.length-1}" step="1" value="5" aria-label="Race"></div>`,`Turn for race`)}
-        ${D(`<button d-key="flush" class="k-next" color="amber" on aria-label="Next race">▶</button>`,`Next`)}
-        ${D(`<button d-key="lamp" class="k-auto" color="cyan" aria-label="Autopilot">自動<br>Auto</button>`,`Autopilot`)}
+        ${D(`<button d-key="flush" class="k-prev" color="red" on aria-label="Previous race">◀</button>`,`Prev`)}
+        ${D(`<div d-knob="encoder" class="pick" color="amber" segments="15" material="plastic-black"><input type="range" min="0" max="${e.length-1}" step="1" value="5" aria-label="Race"></div>`,`Turn for race`)}
+        ${D(`<button d-key="flush" class="k-next" color="red" on aria-label="Next race">▶</button>`,`Next`)}
+        ${D(`<button d-key="lamp" class="k-auto" color="amber" material="plastic-orange" aria-label="Autopilot">自動<br>Auto</button>`,`Autopilot`)}
       </div>
     </section>
     ${O(`split`)}
@@ -97,8 +98,9 @@ import"./preload-helper-9vAq-Yc_.js";import"./controls-BcrWij7w.js";import"./pri
 #election .clock-head { display: flex; gap: ${C(3)}; align-items: baseline; }
 #election .clock-head .jp { font-size: ${C(6)}; }
 #election .clock-body { display: flex; gap: ${C(3)}; }
-#election .timer { width: ${C(112)}; height: ${C(46)}; }
+#election .timer { width: ${C(100)}; height: ${C(46)}; }
 #election .supply { display: grid; gap: ${C(3)}; }
+#election .k-power { width: ${C(40)}; height: ${C(40)}; font: 700 ${C(8)} / 1 'Noto Sans JP', sans-serif; }
 #election .supply [d-lamp] { width: ${C(36)}; height: ${C(21.5)}; font-size: ${C(4.4)}; }
 
 #election .bay { height: ${C(m)}; padding-block: ${C(6)} !important; display: flex; justify-content: space-between; align-items: end; }
