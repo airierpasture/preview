@@ -1,4 +1,4 @@
-import"./preload-helper-9vAq-Yc_.js";import"./controls-BcrWij7w.js";import"./print-BNSsXJvI.js";import"./light-BlsVf-IK.js";import{a as e,c as t,i as n,n as r,o as i,r as a,s as o,t as s,u as c}from"./firmware-election-CinIyZYk.js";var l=720,u=8,d=8,f=92,p=232,m=124,h=[49,23],g=[206,155],_=[264,198],v=2,y=2,b=42,x=e=>`${e*4}px`,S=`#ff7a1a`,C=`#a8551a`,w=(e,t=``,n=S)=>`<span d-mark="label flat" ink="${n}" class="${t}">${e}</span>`,T=(e,t,n=``)=>`<div class="col ${n}">${e}${w(t)}</div>`,E=e=>`<i d-mark="print silk" class="rule ${e}" color="${S}" path="M0 0H100V1H0Z" viewbox="0 0 100 1"></i>`,D=(e,t)=>`<i d-mark="print silk" class="hazard ${e}" color="${S}" viewbox="0 0 ${t*2} 2" path="${Array.from({length:t},(e,t)=>`M${t*2} 2L${t*2+1} 0H${t*2+2}L${t*2+1} 2Z`).join(``)}"></i>`,O=(e,t)=>`<div class="head">${w(e,`jp`)}${w(t,`en`)}${E(`under`)}</div>`,k=[...e.map(([e,t,n],r)=>{let i=t===`S`?`Senate`:`Governor`;return`<div d-lamp="annunciator" class="m-${r} race" color="amber" data-race="${e} ${i}" role="button" aria-label="${e} ${i}">${n}${t===`S`?`上院`:`知事`}<br>${e} ${t===`S`?`Sen`:`Gov`}</div>`}),...s.map(([e,t,n,r])=>`<div d-lamp="annunciator" class="t-${e}" color="${r}">${t}<br>${n}</div>`)],A=(e,t,n,r)=>T(`<div d-meter="gauge" class="g-${e}" ticks="4" minor="3" zones="${r}-${n} amber" label="${t}"><meter min="0" max="${n}" value="0"></meter></div>`,t),j={id:`election`,title:`Election watch`,note:`The operations station, seconded to election night, reading every race from civicAPI. Left on Auto it watches whatever is happening. Press a lamp, or Prev and Next, to pick a race; a MAGI key or the map knob picks the chamber.`,era:`retro`,order:91,dark:!0,height:1856,states:{"house view":[`.vote:nth-child(2)`],"next race":[`.k-next`]},html:`<div id="election">
+import"./preload-helper-9vAq-Yc_.js";import"./controls-BcrWij7w.js";import"./print-BNSsXJvI.js";import"./light-BlsVf-IK.js";import{a as e,c as t,i as n,n as r,o as i,r as a,s as o,t as s,u as c}from"./firmware-election-D_TlRFjp.js";var l=720,u=8,d=8,f=92,p=232,m=124,h=[49,23],g=[206,155],_=[264,198],v=2,y=2,b=42,x=e=>`${e*4}px`,S=`#ff7a1a`,C=`#a8551a`,w=(e,t=``,n=S)=>`<span d-mark="label flat" ink="${n}" class="${t}">${e}</span>`,T=(e,t,n=``)=>`<div class="col ${n}">${e}${w(t)}</div>`,E=e=>`<i d-mark="print silk" class="rule ${e}" color="${S}" path="M0 0H100V1H0Z" viewbox="0 0 100 1"></i>`,D=(e,t)=>`<i d-mark="print silk" class="hazard ${e}" color="${S}" viewbox="0 0 ${t*2} 2" path="${Array.from({length:t},(e,t)=>`M${t*2} 2L${t*2+1} 0H${t*2+2}L${t*2+1} 2Z`).join(``)}"></i>`,O=(e,t)=>`<div class="head">${w(e,`jp`)}${w(t,`en`)}${E(`under`)}</div>`,k=[...e.map(([e,t,n],r)=>{let i=t===`S`?`Senate`:`Governor`;return`<div d-lamp="annunciator" class="m-${r} race" color="amber" data-race="${e} ${i}" role="button" aria-label="${e} ${i}">${n}${t===`S`?`上院`:`知事`}<br>${e} ${t===`S`?`Sen`:`Gov`}</div>`}),...s.map(([e,t,n,r])=>`<div d-lamp="annunciator" class="t-${e}" color="${r}">${t}<br>${n}</div>`)],A=(e,t,n,r)=>T(`<div d-meter="gauge" class="g-${e}" ticks="4" minor="3" zones="${r}-${n} amber" label="${t}"><meter min="0" max="${n}" value="0"></meter></div>`,t),j={id:`election`,title:`Election watch`,note:`The operations station, seconded to election night, reading every race from civicAPI. It powers up, says what its controls do, and then on Auto watches whatever is happening. Press a lamp, or Prev and Next, to pick a race; the view keys pick what the map shows.`,era:`retro`,order:91,dark:!0,height:1856,states:{"house view":[`.view-key:nth-child(2)`],"next race":[`.k-next`]},html:`<div id="election">
   <d-device class="alarms" material="paint-panel-black" radius="4" screws wear="0.35">
     <div class="ident">
       <span d-mark="print silk" class="nerv" color="${S}">NERV</span>
@@ -27,7 +27,10 @@ import"./preload-helper-9vAq-Yc_.js";import"./controls-BcrWij7w.js";import"./pri
   </d-device>
   <d-device class="bay" material="paint-panel-black" radius="4" wear="0.35">
     <div class="side">
-      <div class="votes">${[`Melchior·1`,`Balthasar·2`,`Casper·3`].map(e=>`<button d-key="lamp" class="vote" color="cyan">${e}</button>`).join(``)}</div>
+      <div class="views">
+        <div class="views-head">${w(`表示`,`jp`)}${w(`View`,`en`)}</div>
+        <div class="view-keys">${t.map(([e,t],n)=>`<button d-key="tab lit" class="view-key" aria-pressed="${n===0}" aria-label="Show ${t}">${e}<br>${t}</button>`).join(``)}</div>
+      </div>
       ${T(`<d-screen class="s-magi" kind="crt" gain="2.6" live><canvas width="${a[0]}" height="${a[1]}"></canvas></d-screen>`,`MAGI 審議`)}
     </div>
     <div class="centre">
@@ -44,7 +47,6 @@ import"./preload-helper-9vAq-Yc_.js";import"./controls-BcrWij7w.js";import"./pri
       ${O(`観測`,`Watch`)}
       <div class="row">
         ${T(`<div d-knob="encoder" class="pick" color="green"><input type="range" min="0" max="${e.length-1}" step="1" value="4" aria-label="Race"></div>`,`Race`)}
-        ${T(`<div d-knob="pointer" class="view" labels="${t.join(`,`)}" sweep="200"><input type="range" min="0" max="${t.length-1}" step="1" value="0" aria-label="Map"></div>`,`Map`)}
       </div>
     </section>
     ${E(`split`)}
@@ -100,8 +102,11 @@ import"./preload-helper-9vAq-Yc_.js";import"./controls-BcrWij7w.js";import"./pri
 
 #election .bay { height: ${x(p)}; padding-block: ${x(6)} !important; display: flex; justify-content: space-between; align-items: end; }
 #election .side { display: grid; gap: ${x(4)}; align-content: end; }
-#election .votes { display: grid; grid-template-columns: repeat(3, 1fr); gap: ${x(3)}; }
-#election .vote { height: ${x(48)}; font-size: ${x(5.6)}; }
+#election .views { display: grid; gap: ${x(2.5)}; height: ${x(48)}; align-content: end; }
+#election .views-head { display: flex; gap: ${x(3)}; align-items: baseline; }
+#election .views-head .jp { font-size: ${x(6)}; }
+#election .view-keys { display: grid; grid-template-columns: repeat(4, 1fr); gap: ${x(3)}; }
+#election .view-key { height: ${x(34)}; font-size: ${x(5.4)}; line-height: 1.15; }
 #election .centre { display: grid; gap: ${x(3)}; align-content: end; }
 #election .orders { display: flex; gap: ${x(3)}; align-items: center; }
 #election .orders .jp { font-size: ${x(6)}; }
@@ -121,7 +126,6 @@ import"./preload-helper-9vAq-Yc_.js";import"./controls-BcrWij7w.js";import"./pri
 #election .head .under { flex-basis: 100%; }
 #election section > .row { display: flex; gap: ${x(5)}; align-items: end; justify-self: stretch; }
 #election [d-knob~="encoder"] { width: ${x(34)}; height: ${x(34)}; }
-#election [d-knob~="pointer"] { width: ${x(40)}; height: ${x(40)}; font-size: ${x(4)}; }
 #election [d-meter~="gauge"] { width: ${x(b)}; height: ${x(b)}; }
 #election .readouts { display: grid; gap: ${x(3)}; align-content: end; }
 #election .r-in, #election .r-margin, #election .r-left-s, #election .r-left-h { width: ${x(48)}; height: ${x(20)}; }
