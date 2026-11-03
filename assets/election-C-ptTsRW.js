@@ -1,6 +1,11 @@
-import{w as e}from"./preload-helper-9vAq-Yc_.js";/* empty css            */import{t}from"./controls-BcrWij7w.js";import{r as n,t as r}from"./clips-Oe5mowND.js";import{n as i}from"./demos-a1A1xoMw.js";import{l as a}from"./firmware-election-CinIyZYk.js";var o=28,s=document.createElement(`style`);s.textContent=`.election-page { margin: 0; height: 100svh; background: #050405; color-scheme: dark; display: grid; grid-template: minmax(0, 1fr) / minmax(0, 1fr); overflow: hidden; }
+import{w as e}from"./preload-helper-9vAq-Yc_.js";/* empty css            */import{t}from"./controls-BcrWij7w.js";import{r as n,t as r}from"./clips-Oe5mowND.js";import{n as i}from"./demos-DcEleCBp.js";import{l as a}from"./firmware-election-CinIyZYk.js";var o=28,s=document.createElement(`style`);s.textContent=`.election-page { margin: 0; height: 100svh; background: #050405; color-scheme: dark; display: grid; grid-template: minmax(0, 1fr) / minmax(0, 1fr); overflow: hidden; }
 #stage { min-height: 0; display: grid; place-items: center; padding: 0 0 ${o}px; box-sizing: border-box; }
-.election-foot { position: fixed; left: 12px; right: 140px; bottom: 0; height: ${o}px; display: flex; align-items: center; color: #8a877f; font: 500 11px/1.2 ui-monospace, monospace; letter-spacing: .04em; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+.election-foot { position: fixed; left: 12px; right: 140px; bottom: 0; height: ${o}px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #8a877f; font: 500 11px/${o}px ui-monospace, monospace; letter-spacing: .04em; }
+/* The bridge is a landscape thing: held upright, a phone shows it as a strip, so say how to see it whole. */
+@media (orientation: portrait) and (max-width: 900px) {
+  .election-page::before { content: '横向き  TURN SIDEWAYS FOR THE FULL BRIDGE'; position: fixed; left: 0; right: 0; top: 24px; text-align: center; color: #a8551a; font: 600 11px/1.4 ui-monospace, monospace; letter-spacing: .12em; }
+}
 
 .election-foot a { color: #b9b6ad; }
 .election-sound { position: fixed; right: 12px; bottom: 4px; height: 20px; z-index: 1; padding: 0 8px; border: 1px solid #34363a; border-radius: 4px; background: #0b0c0d; color: #b9b6ad; font: 600 11px/1 ui-monospace, monospace; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
