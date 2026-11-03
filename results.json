@@ -1,0 +1,28 @@
+{
+  "_help": "Edit by hand. Times are ISO with offset (-05:00 is ET). house D/R/I: seats called so far, of 435. senate D/R/I: seats called this year only, of 35; the page adds the 65 not up (32 D, 31 R, 2 I). races: call is \"D\", \"R\", \"I\" or null, only once AP or the networks have called it; close: true makes it blink too close to call. Bump updated every time you save. source stays manual.",
+  "source": "manual",
+  "updated": "2026-11-03T14:45:00-05:00",
+  "house": { "D": 0, "R": 0, "I": 0, "asOf": "2026-11-03T14:45:00-05:00" },
+  "senate": { "D": 0, "R": 0, "I": 0, "asOf": "2026-11-03T14:45:00-05:00" },
+  "races": {
+    "ak-sen": { "call": null, "close": false },
+    "ga-sen": { "call": null, "close": false },
+    "ia-sen": { "call": null, "close": false },
+    "ks-sen": { "call": null, "close": false },
+    "me-sen": { "call": null, "close": false },
+    "mi-sen": { "call": null, "close": false },
+    "nc-sen": { "call": null, "close": false },
+    "nh-sen": { "call": null, "close": false },
+    "oh-sen": { "call": null, "close": false },
+    "tx-sen": { "call": null, "close": false },
+    "ga-gov": { "call": null, "close": false },
+    "ia-gov": { "call": null, "close": false },
+    "mi-gov": { "call": null, "close": false },
+    "nv-gov": { "call": null, "close": false },
+    "oh-gov": { "call": null, "close": false },
+    "wi-gov": { "call": null, "close": false }
+  },
+  "ticker": [
+    "POLLS HAVE NOT CLOSED. NO RESULTS YET."
+  ]
+}

@@ -1,4 +1,4 @@
-import"./preload-helper-9vAq-Yc_.js";import"./controls-BcrWij7w.js";import"./print-BNSsXJvI.js";import"./light-BlsVf-IK.js";import{n as e}from"./sound-eva-D2rC9gYk.js";var t=`#version 300 es
+import"./preload-helper-9vAq-Yc_.js";import"./controls-BcrWij7w.js";import"./print-BNSsXJvI.js";import"./light-BlsVf-IK.js";import{n as e}from"./sound-eva-DwzG63h8.js";var t=`#version 300 es
 precision highp float;
 precision highp sampler2D;
 in vec2 vUv;
