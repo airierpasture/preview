@@ -1,4 +1,4 @@
-import"./preload-helper-C4YgKpeq.js";import"./controls-B6eW4FZ7.js";import"./print-7tlKbgS2.js";import"./light-Ce9RCnLi.js";import"./synth-BXfty0Xv.js";import{a as e,c as t,d as n,i as r,l as i,n as a,o,p as s,r as c,s as l,t as u,u as d}from"./firmware-election-Brt7_Vb7.js";var f=820,p=8,m=8,h=92,g=232,_=124,v=[112,78],y=[104,78],b=[49,23],x=[206,155],S=[264,198],C=2,w=2,T=e=>`${e*4}px`,E=`#ff7a1a`,D=`#a8551a`,O=(e,t=``,n=E)=>`<span d-mark="label flat" ink="${n}" class="${t}">${e}</span>`,k=(e,t,n=``)=>`<div class="col ${n}">${e}${O(t)}</div>`,A=(e,t)=>`<i d-mark="print silk" class="hazard ${e}" color="${E}" viewbox="0 0 ${t*2} 2" path="${Array.from({length:t},(e,t)=>`M${t*2} 2L${t*2+1} 0H${t*2+2}L${t*2+1} 2Z`).join(``)}"></i>`,j=(e,t)=>`<div class="head">${O(e,`jp`)}${O(t,`en`)}</div>`,M=(e,t)=>`<div class="banded">${A(`w-band`,6)}${O(e,`jp`)}${O(t,`en`)}${A(`w-band`,6)}</div>`,N=[...o.map(([e,t,n],r)=>{let i=t===`S`?`Senate`:`Governor`;return`<div d-lamp="annunciator" class="m-${r} race" color="amber" data-race="${e} ${i}" role="button" aria-label="${e} ${i}">${n}${t===`S`?`上院`:`知事`}<br>${e} ${t===`S`?`Sen`:`Gov`}</div>`}),...u.map(([e,t,n,r])=>`<div d-lamp="annunciator" class="t-${e}" color="${r}">${t}<br>${n}</div>`)],P={id:`election`,title:`Election watch`,note:`The operations station, seconded to election night, reading every race from civicAPI. It powers up, says what its controls do, and then on Auto watches whatever is happening. Press a lamp, or Prev and Next, to pick a race; the view keys pick what the map shows.`,era:`retro`,order:91,dark:!0,height:1856,states:{"house view":[`.view-key:nth-child(2)`],"next race":[`.k-next`]},html:`<div id="election">
+import"./preload-helper-C4YgKpeq.js";import"./controls-B6eW4FZ7.js";import"./print-7tlKbgS2.js";import"./light-Ce9RCnLi.js";import"./synth-BXfty0Xv.js";import{a as e,c as t,d as n,i as r,l as i,n as a,o,p as s,r as c,s as l,t as u,u as d}from"./firmware-election-XsN3yMDA.js";var f=820,p=8,m=8,h=92,g=232,_=124,v=[112,78],y=[104,78],b=[49,23],x=[206,155],S=[264,198],C=2,w=2,T=e=>`${e*4}px`,E=`#ff7a1a`,D=`#a8551a`,O=(e,t=``,n=E)=>`<span d-mark="label flat" ink="${n}" class="${t}">${e}</span>`,k=(e,t,n=``)=>`<div class="col ${n}">${e}${O(t)}</div>`,A=(e,t)=>`<i d-mark="print silk" class="hazard ${e}" color="${E}" viewbox="0 0 ${t*2} 2" path="${Array.from({length:t},(e,t)=>`M${t*2} 2L${t*2+1} 0H${t*2+2}L${t*2+1} 2Z`).join(``)}"></i>`,j=(e,t)=>`<div class="head">${O(e,`jp`)}${O(t,`en`)}</div>`,M=(e,t)=>`<div class="banded">${A(`w-band`,6)}${O(e,`jp`)}${O(t,`en`)}${A(`w-band`,6)}</div>`,N=[...o.map(([e,t,n],r)=>{let i=t===`S`?`Senate`:`Governor`;return`<div d-lamp="annunciator" class="m-${r} race" color="amber" data-race="${e} ${i}" role="button" aria-label="${e} ${i}">${n}${t===`S`?`上院`:`知事`}<br>${e} ${t===`S`?`Sen`:`Gov`}</div>`}),...u.map(([e,t,n,r])=>`<div d-lamp="annunciator" class="t-${e}" color="${r}">${t}<br>${n}</div>`)],P={id:`election`,title:`Election watch`,note:`The operations station, seconded to election night, reading every race from civicAPI. It powers up, says what its controls do, and then on Auto watches whatever is happening. Press a lamp, or Prev and Next, to pick a race; the view keys pick what the map shows.`,era:`retro`,order:91,dark:!0,height:1856,states:{"house view":[`.view-key:nth-child(2)`],"next race":[`.k-next`]},html:`<div id="election">
   <d-device class="alarms" material="paint-panel-black" radius="4" screws wear="0.35">
     <div class="ident">
       <span d-mark="print silk" class="nerv" color="${E}">NERV</span>
@@ -21,6 +21,7 @@ import"./preload-helper-C4YgKpeq.js";import"./controls-B6eW4FZ7.js";import"./pri
       </div>
       <div class="gauges">${a.map(([e,t,n,r])=>`<div class="gauge">${O(`${t} ${n}`,`small`)}<div d-readout="seven" class="r-${e}" color="${r}" digits="3"></div></div>`).join(``)}</div>
     </div>
+    ${k(`<div d-slider="fader" class="data-vol" leds="11" slot="2.5" cap="12" color="green" material="brushed-aluminium-dull"><input type="range" min="0" max="10" step="1" value="3" aria-label="Data sound volume"></div>`,`信号 Data`,`data-col`)}
   </d-device>
   <d-device class="bay" material="paint-panel-black" radius="4" wear="0.35">
     <div class="side">
@@ -74,7 +75,6 @@ import"./preload-helper-C4YgKpeq.js";import"./controls-B6eW4FZ7.js";import"./pri
           </div>
           ${k(`<div class="rk"><div d-lamp="led" class="led l-sound" color="amber"></div><div d-switch="rocker" class="sw-sound"><input type="checkbox" aria-label="Sound"></div></div>`,`音声 Sound`)}
           ${k(`<div d-slider="fader" class="vol" leds="11" slot="2.5" cap="12" color="amber" material="brushed-aluminium-dull"><input type="range" min="0" max="10" step="1" value="6" aria-label="Volume"></div>`,`音量 Vol`)}
-          ${k(`<div d-slider="fader" class="data-vol" leds="11" slot="2.5" cap="12" color="green" material="brushed-aluminium-dull"><input type="range" min="0" max="10" step="1" value="4" aria-label="Data sound volume"></div>`,`信号 Data`)}
         </div>
         ${k(`<div d-cover="guard" class="guard" material="plastic-orange"><input type="checkbox" aria-label="Lift the guard"><button d-key="arcade" class="k-power" color="red" aria-label="Start">起動</button></div>`,`緊急起動 Start`)}
         <div class="flank">
@@ -190,7 +190,10 @@ import"./preload-helper-C4YgKpeq.js";import"./controls-B6eW4FZ7.js";import"./pri
 #election .power .col > [d-mark] { white-space: nowrap; }
 #election .k-ack { width: ${T(24)}; height: ${T(24)}; font: 700 ${T(5.5)} / 1 'Noto Sans JP', sans-serif; }
 #election .k-test { width: ${T(17)}; height: ${T(17)}; font: 700 ${T(4.2)} / 1 'Noto Sans JP', sans-serif; }
-#election .vol, #election .data-vol { width: ${T(22)}; height: ${T(48)}; }
+#election .vol { width: ${T(22)}; height: ${T(48)}; }
+#election .data-col { align-self: stretch; align-content: center; }
+#election .data-col > [d-mark] { white-space: nowrap; }
+#election .data-vol { width: ${T(18)}; height: ${T(56)}; }
 #election .room { width: ${T(28)}; height: ${T(28)}; }
 #election .flank:first-child { justify-self: end; }
 #election .guard { width: ${T(58)}; height: ${T(58)}; display: grid; place-items: center; }
