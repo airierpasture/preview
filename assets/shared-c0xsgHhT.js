@@ -1,4 +1,4 @@
-import{_ as e,dt as t,rt as n,ut as r}from"./preload-helper-C4YgKpeq.js";import{t as i}from"./materials-Bythap_7.js";var a=[3.85,1.76,.28],o=(e,t)=>e.el.closest(`d-surface`)?.getAttribute(`material`)??t.material,s=(e,t,n)=>{let r=e.el.getAttribute(t);return r===null||r===``?n:+r},c=(e,t,n)=>{let r=e.el.getAttribute(t);return r?r.trim().split(/[\s,]+/).map(Number):n},l=(e,t=``)=>e.map(e=>`.d-gl ${e}${t}`).join(`, `),u=(...e)=>`
+import{_ as e,dt as t,rt as n,ut as r}from"./preload-helper-D7zDL3FE.js";import{t as i}from"./materials-CC8b-Gc6.js";var a=[3.85,1.76,.28],o=(e,t)=>e.el.closest(`d-surface`)?.getAttribute(`material`)??t.material,s=(e,t,n)=>{let r=e.el.getAttribute(t);return r===null||r===``?n:+r},c=(e,t,n)=>{let r=e.el.getAttribute(t);return r?r.trim().split(/[\s,]+/).map(Number):n},l=(e,t=``)=>e.map(e=>`.d-gl ${e}${t}`).join(`, `),u=(...e)=>`
 ${e.join(`, `)} { display: block; position: relative; touch-action: none; }
 ${e.map(e=>`${e} input`).join(`, `)} { width: 100%; height: 100%; margin: 0; }
 ${l(e)} { cursor: grab; }
