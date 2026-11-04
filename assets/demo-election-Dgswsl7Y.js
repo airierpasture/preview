@@ -1,4 +1,4 @@
-import"./preload-helper-Bi8AzP7I.js";import"./controls-DTv5AiSE.js";import"./print-bl702QUW.js";import"./light-B3Zv6Zox.js";import"./synth-CM8kW2TR.js";import{a as e,c as t,f as n,i as r,l as i,n as a,o,r as s,s as c,t as l,u}from"./firmware-election-CoQLH0IY.js";var d=820,f=8,p=8,m=112,h=278,g=124,_=[250,7],v=[112,78],y=[40,30],b=[26,20],x=[224,168],S=[300,225],C=2,w=2,T=e=>`${e*4}px`,E=`#ff7a1a`,D=`#a8551a`,O=(e,t=``,n=E)=>`<span d-mark="label flat" ink="${n}" class="${t}">${e}</span>`,k=(e,t,n=``)=>`<div class="col ${n}">${e}${O(t)}</div>`,A=(e,t)=>`<i d-mark="print silk" class="hazard ${e}" color="${E}" viewbox="0 0 ${t*2} 2" path="${Array.from({length:t},(e,t)=>`M${t*2} 2L${t*2+1} 0H${t*2+2}L${t*2+1} 2Z`).join(``)}"></i>`,j=(e,t)=>`<div class="head">${O(e,`jp`)}${O(t,`en`)}</div>`,M=(e,t,n,r,i,a)=>`<div class="tug">
+import"./preload-helper-Bi8AzP7I.js";import"./controls-DTv5AiSE.js";import"./print-bl702QUW.js";import"./light-B3Zv6Zox.js";import"./synth-CM8kW2TR.js";import{a as e,c as t,f as n,i as r,l as i,n as a,o,r as s,s as c,t as l,u}from"./firmware-election-CoQLH0IY.js";var d=820,f=8,p=8,m=92,h=268,g=124,_=[250,7],v=[112,78],y=[40,30],b=[26,20],x=[224,168],S=[300,225],C=2,w=2,T=e=>`${e*4}px`,E=`#ff7a1a`,D=`#a8551a`,O=(e,t=``,n=E)=>`<span d-mark="label flat" ink="${n}" class="${t}">${e}</span>`,k=(e,t,n=``)=>`<div class="col ${n}">${e}${O(t)}</div>`,A=(e,t)=>`<i d-mark="print silk" class="hazard ${e}" color="${E}" viewbox="0 0 ${t*2} 2" path="${Array.from({length:t},(e,t)=>`M${t*2} 2L${t*2+1} 0H${t*2+2}L${t*2+1} 2Z`).join(``)}"></i>`,j=(e,t)=>`<div class="head">${O(e,`jp`)}${O(t,`en`)}</div>`,M=(e,t,n,r,i,a)=>`<div class="tug">
       ${O(`${e} ${t}`,`tug-name small`)}
       <div d-readout="seven" class="r-${n}d" color="blue" digits="3"></div>
       <div class="bars" style="--at: ${i/r*100}%">
@@ -8,7 +8,7 @@ import"./preload-helper-Bi8AzP7I.js";import"./controls-DTv5AiSE.js";import"./pri
         ${O(String(i),`at small`,`#ffe6b0`)}
       </div>
       <div d-readout="seven" class="r-${n}r" color="red" digits="3"></div>
-    </div>`,N=(e,t)=>`<div class="banded">${A(`w-band`,6)}${O(e,`jp`)}${O(t,`en`)}${A(`w-band`,6)}</div>`,P=[...e.map(([e,t],n)=>{let r=t===`S`?`Senate`:`Governor`;return`<div d-lamp="annunciator" class="m-${n} race" color="amber" data-race="${e} ${r}" role="button" aria-label="${e} ${r}">${e}<br>${t===`S`?`上院`:`知事`}</div>`}),...l.map(([e,t,n,r])=>`<div d-lamp="annunciator" class="t-${e}" color="${r}" title="${n}">${t}</div>`)],F={id:`election`,title:`Election watch`,note:`The operations station, seconded to election night, reading every race from civicAPI. It powers up, says what its controls do, and then on Auto watches whatever is happening. Press a lamp, or Prev and Next, to pick a race; the view keys pick what the map shows.`,era:`retro`,order:91,dark:!0,height:2120,states:{"house view":[`.view-key:nth-child(2)`],"next race":[`.k-next`]},html:`<div id="election">
+    </div>`,N=(e,t)=>`<div class="banded">${A(`w-band`,6)}${O(e,`jp`)}${O(t,`en`)}${A(`w-band`,6)}</div>`,P=[...e.map(([e,t],n)=>{let r=t===`S`?`Senate`:`Governor`;return`<div d-lamp="annunciator" class="m-${n} race" color="amber" data-race="${e} ${r}" role="button" aria-label="${e} ${r}">${e}<br>${t===`S`?`上院`:`知事`}</div>`}),...l.map(([e,t,n,r])=>`<div d-lamp="annunciator" class="t-${e}" color="${r}" title="${n}">${t}</div>`)],F={id:`election`,title:`Election watch`,note:`The operations station, seconded to election night, reading every race from civicAPI. It powers up, says what its controls do, and then on Auto watches whatever is happening. Press a lamp, or Prev and Next, to pick a race; the view keys pick what the map shows.`,era:`retro`,order:91,dark:!0,height:2e3,states:{"house view":[`.view-key:nth-child(2)`],"next race":[`.k-next`]},html:`<div id="election">
   <d-device class="alarms" material="paint-panel-black" radius="4" screws wear="0.35">
     <div class="ident">
       <span d-mark="print silk" class="nerv" color="${E}">NERV</span>
@@ -123,7 +123,7 @@ import"./preload-helper-Bi8AzP7I.js";import"./controls-DTv5AiSE.js";import"./pri
 #election .alarms { height: ${T(m)}; display: flex; align-items: center; gap: ${T(8)}; }
 #election .ident { display: grid; gap: ${T(1.5)}; align-self: stretch; align-content: center; width: ${T(50)}; flex: none; }
 #election .matrix { flex: none !important; }
-#election .tally { flex: 1; display: grid; gap: ${T(7)}; align-content: center; }
+#election .tally { flex: 1; display: grid; gap: ${T(4)}; align-content: center; }
 #election .tug { display: grid; grid-template-columns: ${T(26)} ${T(22)} minmax(0, 1fr) ${T(22)}; gap: ${T(2.5)}; align-items: end; }
 #election .tug-name { white-space: nowrap; align-self: center; }
 #election .tug [d-readout] { height: ${T(14)}; }
@@ -139,7 +139,7 @@ import"./preload-helper-Bi8AzP7I.js";import"./controls-DTv5AiSE.js";import"./pri
 #election .link .led { width: ${T(4.5)}; height: ${T(4.5)}; }
 #election .link [d-readout] { width: ${T(14)}; height: ${T(10)}; }
 #election .link > [d-mark] { white-space: nowrap; font-size: ${T(3.4)}; }
-#election .bay { height: ${T(h)}; padding-block: ${T(6)} !important; display: grid; grid-template-columns: auto auto auto; grid-template-rows: auto minmax(0, 1fr); justify-content: space-between; align-items: end; row-gap: ${T(5)}; }
+#election .bay { height: ${T(h)}; padding-block: ${T(6)} !important; display: grid; grid-template-columns: auto auto auto; grid-template-rows: auto auto; align-content: center; justify-content: space-between; align-items: end; row-gap: ${T(4)}; }
 #election .bay > .orders { grid-column: 1 / -1; }
 #election .side, #election .centre { display: grid; gap: ${T(4)}; align-content: end; }
 #election .s-sync { width: ${T(S[1])}; height: ${T(S[1])}; }
