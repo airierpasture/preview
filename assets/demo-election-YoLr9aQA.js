@@ -1,4 +1,4 @@
-import"./preload-helper-Bi8AzP7I.js";import"./controls-DTv5AiSE.js";import"./print-bl702QUW.js";import"./light-B3Zv6Zox.js";import"./synth-CM8kW2TR.js";import{a as e,c as t,f as n,i as r,l as i,n as a,o,r as s,s as c,t as l,u}from"./firmware-election-CoQLH0IY.js";var d=820,f=8,p=8,m=92,h=268,g=124,_=[250,7],v=[112,78],y=[40,30],b=[26,20],x=[224,168],S=[300,225],C=2,w=2,T=e=>`${e*4}px`,E=`#ff7a1a`,D=`#a8551a`,O=(e,t=``,n=E)=>`<span d-mark="label flat" ink="${n}" class="${t}">${e}</span>`,k=(e,t,n=``)=>`<div class="col ${n}">${e}${O(t)}</div>`,A=(e,t)=>`<i d-mark="print silk" class="hazard ${e}" color="${E}" viewbox="0 0 ${t*2} 2" path="${Array.from({length:t},(e,t)=>`M${t*2} 2L${t*2+1} 0H${t*2+2}L${t*2+1} 2Z`).join(``)}"></i>`,j=(e,t)=>`<div class="head">${O(e,`jp`)}${O(t,`en`)}</div>`,M=(e,t,n,r,i,a)=>`<div class="tug">
+import"./preload-helper-Bi8AzP7I.js";import"./controls-DTv5AiSE.js";import"./print-bl702QUW.js";import"./light-B3Zv6Zox.js";import"./synth-CM8kW2TR.js";import{a as e,c as t,f as n,i as r,l as i,n as a,o,r as s,s as c,t as l,u}from"./firmware-election-CoQLH0IY.js";var d=820,f=8,p=8,m=92,h=268,g=124,_=[170,7],v=[112,78],y=[40,30],b=[52,20],x=[224,168],S=[300,225],C=2,w=2,T=e=>`${e*4}px`,E=`#ff7a1a`,D=`#a8551a`,O=(e,t=``,n=E)=>`<span d-mark="label flat" ink="${n}" class="${t}">${e}</span>`,k=(e,t,n=``)=>`<div class="col ${n}">${e}${O(t)}</div>`,A=(e,t)=>`<i d-mark="print silk" class="hazard ${e}" color="${E}" viewbox="0 0 ${t*2} 2" path="${Array.from({length:t},(e,t)=>`M${t*2} 2L${t*2+1} 0H${t*2+2}L${t*2+1} 2Z`).join(``)}"></i>`,j=(e,t)=>`<div class="head">${O(e,`jp`)}${O(t,`en`)}</div>`,M=(e,t,n,r,i,a)=>`<div class="tug">
       ${O(`${e} ${t}`,`tug-name small`)}
       <div d-readout="seven" class="r-${n}d" color="blue" digits="3"></div>
       <div class="bars" style="--at: ${i/r*100}%">
@@ -8,15 +8,8 @@ import"./preload-helper-Bi8AzP7I.js";import"./controls-DTv5AiSE.js";import"./pri
         ${O(String(i),`at small`,`#ffe6b0`)}
       </div>
       <div d-readout="seven" class="r-${n}r" color="red" digits="3"></div>
-    </div>`,N=(e,t)=>`<div class="banded">${A(`w-band`,6)}${O(e,`jp`)}${O(t,`en`)}${A(`w-band`,6)}</div>`,P=[...e.map(([e,t],n)=>{let r=t===`S`?`Senate`:`Governor`;return`<div d-lamp="annunciator" class="m-${n} race" color="amber" data-race="${e} ${r}" role="button" aria-label="${e} ${r}">${e}<br>${t===`S`?`上院`:`知事`}</div>`}),...l.map(([e,t,n,r])=>`<div d-lamp="annunciator" class="t-${e}" color="${r}" title="${n}">${t}</div>`)],F={id:`election`,title:`Election watch`,note:`The operations station, seconded to election night, reading every race from civicAPI. It powers up, says what its controls do, and then on Auto watches whatever is happening. Press a lamp, or Prev and Next, to pick a race; the view keys pick what the map shows.`,era:`retro`,order:91,dark:!0,height:2e3,states:{"house view":[`.view-key:nth-child(2)`],"next race":[`.k-next`]},html:`<div id="election">
+    </div>`,N=(e,t)=>`<div class="banded">${A(`w-band`,6)}${O(e,`jp`)}${O(t,`en`)}${A(`w-band`,6)}</div>`,P=[...e.map(([e,t,n],r)=>{let i=t===`S`?`Senate`:`Governor`;return`<div d-lamp="annunciator" class="m-${r} race" color="amber" data-race="${e} ${i}" role="button" aria-label="${e} ${i}">${n}${t===`S`?`上院`:`知事`}<br>${e} ${t===`S`?`Sen`:`Gov`}</div>`}),...l.map(([e,t,n,r])=>`<div d-lamp="annunciator" class="t-${e}" color="${r}">${t}<br>${n}</div>`)],F={id:`election`,title:`Election watch`,note:`The operations station, seconded to election night, reading every race from civicAPI. It powers up, says what its controls do, and then on Auto watches whatever is happening. Press a lamp, or Prev and Next, to pick a race; the view keys pick what the map shows.`,era:`retro`,order:91,dark:!0,height:2e3,states:{"house view":[`.view-key:nth-child(2)`],"next race":[`.k-next`]},html:`<div id="election">
   <d-device class="alarms" material="paint-panel-black" radius="4" screws wear="0.35">
-    <div class="ident">
-      <span d-mark="print silk" class="nerv" color="${E}">NERV</span>
-      ${O(`選挙監視所`,`jp`)}
-      ${O(`Election watch 03`,`en`)}
-      ${A(`id-band`,12)}
-      ${O(`Data: civicAPI desk · not official · a lead is not a call`,`credit`,D)}
-    </div>
     <div class="matrix">
       ${c.map((e,t)=>`${O(e,`rowname`,D)}${P.slice(t*8,(t+1)*8).join(``)}`).join(``)}
     </div>
@@ -121,10 +114,9 @@ import"./preload-helper-Bi8AzP7I.js";import"./controls-DTv5AiSE.js";import"./pri
 #election .small { font-size: ${T(4.6)}; }
 
 #election .alarms { height: ${T(m)}; display: flex; align-items: center; gap: ${T(8)}; }
-#election .ident { display: grid; gap: ${T(1.5)}; align-self: stretch; align-content: center; width: ${T(50)}; flex: none; }
-#election .matrix { flex: none !important; }
-#election .tally { flex: 1; display: grid; gap: ${T(4)}; align-content: center; }
-#election .tug { display: grid; grid-template-columns: ${T(26)} ${T(22)} minmax(0, 1fr) ${T(22)}; gap: ${T(2.5)}; align-items: end; }
+#election .matrix { flex: 1 !important; }
+#election .tally { flex: none; display: grid; gap: ${T(4)}; align-content: center; }
+#election .tug { display: grid; grid-template-columns: ${T(26)} ${T(22)} ${T(_[0])} ${T(22)}; gap: ${T(2.5)}; align-items: end; }
 #election .tug-name { white-space: nowrap; align-self: center; }
 #election .tug [d-readout] { height: ${T(14)}; }
 #election .bars { position: relative; display: grid; gap: ${T(1.5)}; padding-top: ${T(5)}; }
@@ -143,16 +135,10 @@ import"./preload-helper-Bi8AzP7I.js";import"./controls-DTv5AiSE.js";import"./pri
 #election .bay > .orders { grid-column: 1 / -1; }
 #election .side, #election .centre { display: grid; gap: ${T(4)}; align-content: end; }
 #election .s-sync { width: ${T(S[1])}; height: ${T(S[1])}; }
-#election .matrix [d-lamp] { width: ${T(b[0])}; }
-#election .nerv { font: 900 ${T(19)} / 1 'Noto Serif', serif; font-stretch: 62.5%; letter-spacing: 0; }
-#election .ident .jp { font-size: ${T(6)}; }
-#election .ident .en { font-size: ${T(4.6)}; }
-#election .credit { font-size: ${T(3)}; letter-spacing: .02em; line-height: 1.2; }
-#election .id-band { display: block; width: 100%; height: ${T(4)}; margin-top: ${T(2)}; }
-#election .matrix { flex: 1; display: grid; grid-template-columns: auto repeat(8, ${T(b[0])}); grid-auto-rows: ${T(b[1])}; gap: ${T(2.5)} ${T(1.5)}; align-items: center; }
-#election .rowname { justify-self: end; font-size: ${T(4.6)}; }
-#election [d-lamp~="annunciator"] { display: grid; place-items: center; text-align: center; font-size: ${T(3.3)}; line-height: 1.1; letter-spacing: .02em; }
-#election .race { font-size: ${T(3.6)} !important; letter-spacing: 0 !important; cursor: pointer; }
+#election .matrix { flex: 1; display: grid; grid-template-columns: auto repeat(8, minmax(0, 1fr)); grid-auto-rows: ${T(b[1])}; gap: ${T(2.5)} ${T(1.5)}; align-items: stretch; }
+#election .rowname { justify-self: end; align-self: center; font-size: ${T(4.6)}; }
+#election [d-lamp~="annunciator"] { display: grid; place-items: center; text-align: center; font-size: ${T(4.2)}; line-height: 1.1; letter-spacing: .02em; }
+#election .race { font-size: ${T(5)} !important; white-space: nowrap; letter-spacing: 0 !important; cursor: pointer; }
 #election .clock-head { display: flex; gap: ${T(3)}; align-items: baseline; }
 #election .clock-head .jp { font-size: ${T(6)}; }
 #election .clock-body { display: flex; gap: ${T(3)}; }
