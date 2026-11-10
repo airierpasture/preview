@@ -1,0 +1,1 @@
+import{M as e,N as t}from"./base-Bs11u1Jq.js";Object.defineProperty(window,"engine",{get:t,configurable:!0}),Object.assign(window,{flushed:e=>t().flushed(e)});var n=new URLSearchParams(location.search),r=n.get(`lamp`),i=n.get(`shade`),a=n.get(`bake`);r&&e({lampHz:r===`every`?0:Number(r)||0}),(i===`full`||i===`coarse`)&&e({shade:i}),(a===`off`||a===`on`)&&e({bake:a===`on`});
