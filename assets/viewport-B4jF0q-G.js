@@ -1,0 +1,1 @@
+var e=()=>document.documentElement.clientWidth;export{e as t};
