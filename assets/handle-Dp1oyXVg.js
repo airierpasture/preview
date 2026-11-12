@@ -1,1 +1,0 @@
-import{C as e,w as t}from"./base-DPkYo9og.js";Object.defineProperty(window,"engine",{get:t,configurable:!0}),Object.assign(window,{flushed:e=>t().flushed(e)});var n=new URLSearchParams(location.search),r=n.get(`lamp`);r&&e({lampHz:r===`every`?0:Number(r)||0});var i=n.get(`live`);(i===`full`||i===`one`||i===`fixed`)&&e({live:i});
